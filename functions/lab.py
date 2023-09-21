@@ -43,3 +43,9 @@ def double_eights(n):
     >>> double_eights(80808080)
     False
     """
+    pre, cur = n % 10, n % 10 % 10
+    while n != 0:
+        n, pre, cur = n // 10, cur, n % 10
+        if pre == 8 and cur == 8:
+            return True
+        return False
